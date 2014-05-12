@@ -11,7 +11,7 @@ module.exports = {
 
 	'dessert' : {
 		'authorizationURL'  : 'http://dessert-api.herokuapp.com/oauth2',
-		'tokenURL'          : 'http://dessert-api.herokuapp.com//oauth2/token',
+		'tokenURL'          : 'http://dessert-api.herokuapp.com/oauth2/token',
 		'clientID' 		    : 'abc123',
 		'clientSecret'   	: 'ssh-secret',
 		'callbackURL' 	    : 'http://dessert-web.herokuapp.com/auth/dessert/callback'
