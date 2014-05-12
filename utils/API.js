@@ -17,13 +17,19 @@ exports.profile = function(accessToken, done){
 };
 
 var performRequest = function (endpoint, method, done){
+	var env = process.env.NODE_ENV || 'development';
 	var http = require('http');
 	var options = {
-		hostname: 'dessert-api.heroku.com',
-//		port: 3000,
 		path: endpoint,
 		method: method
 	};
+
+	if ('development' == env){
+		options.hostname = 'localhost';
+		options.port = 3000;
+	}else{
+		options.hostname = 'dessert-api.heroku.com';
+	}
 
 	var req = http.request(options, function(response) {
 
