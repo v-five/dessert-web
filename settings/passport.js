@@ -5,14 +5,15 @@ module.exports = function(passport){
 	var config          = require('../config');
 	var User            = require('../handler').user;
 	var API             = require('../utils').API;
+	var env = process.env.NODE_ENV || 'development';
 
 	// Dessert login
 	passport.use('dessert', new OAuth2Strategy({
-				authorizationURL: config.auth.dessert.authorizationURL,
-				tokenURL        : config.auth.dessert.tokenURL,
+				authorizationURL: env == "development" ? config.auth.localhost.authorizationURL : config.auth.dessert.authorizationURL,
+				tokenURL        : env == "development" ? config.auth.localhost.tokenURL : config.auth.dessert.tokenURL,
 				clientID        : config.auth.dessert.clientID,
 				clientSecret    : config.auth.dessert.clientSecret,
-				callbackURL     : config.auth.dessert.callbackURL
+				callbackURL     : env == "development" ? config.auth.localhost.callbackURL : config.auth.dessert.callbackURL
 			},
 			function(accessToken, refreshToken, info, done) {
 				API.profile(accessToken, function(err, profile){
