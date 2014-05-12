@@ -5,13 +5,13 @@ exports.profile = function(accessToken, done){
 	var method = "GET";
 
 	performRequest(endpoint, method, function(err, profile, info){
-
+		console.log(20);
 		if(err)
 			return done(err);
-
+		console.log(22);
 		if(!profile)
 			return done(null, false, info);
-
+		console.log(23);
 		done(null, profile);
 	});
 };
@@ -30,8 +30,6 @@ var performRequest = function (endpoint, method, done){
 	}else{
 		options.hostname = 'dessert-api.heroku.com';
 	}
-
-	console.log(options)
 
 	var req = http.request(options, function(response) {
 
