@@ -16,6 +16,17 @@ module.exports = function(passport){
 				callbackURL     : env == "development" ? config.auth.localhost.callbackURL : config.auth.dessert.callbackURL
 			},
 			function(accessToken, refreshToken, info, done) {
+				console.log(" ");
+				console.log(" ");
+				console.log(" ");
+				console.log(" ");
+				console.log(" ");
+				console.log("accessToken: "+accessToken);
+				console.log(" ");
+				console.log(" ");
+				console.log(" ");
+				console.log(" ");
+				console.log(" ");
 				API.profile(accessToken, function(err, profile){
 					if(err)
 						return done(err);
