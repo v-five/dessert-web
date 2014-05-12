@@ -19,8 +19,8 @@ exports.profile = function(accessToken, done){
 var performRequest = function (endpoint, method, done){
 	var http = require('http');
 	var options = {
-		hostname: 'localhost',
-		port: 3000,
+		hostname: 'dessert-api.heroku.com',
+//		port: 3000,
 		path: endpoint,
 		method: method
 	};
