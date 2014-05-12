@@ -8,7 +8,10 @@ exports.profile = function(accessToken, done){
 		console.log(20);
 		if(err)
 			return done(err);
-		console.log(22);
+		console.log("profile: ");
+		console.log(profile);
+		console.log("info: ");
+		console.log(info);
 		if(!profile)
 			return done(null, false, info);
 		console.log(23);
