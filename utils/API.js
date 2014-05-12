@@ -5,16 +5,13 @@ exports.profile = function(accessToken, done){
 	var method = "GET";
 
 	performRequest(endpoint, method, function(err, profile, info){
-		console.log(20);
+
 		if(err)
 			return done(err);
-		console.log("profile: ");
-		console.log(profile);
-		console.log("info: ");
-		console.log(info);
+
 		if(!profile)
 			return done(null, false, info);
-		console.log(23);
+
 		done(null, profile);
 	});
 };
@@ -36,12 +33,37 @@ var performRequest = function (endpoint, method, done){
 
 	var req = http.request(options, function(response) {
 
+
+
+		console.log(" ");
+		console.log(" ");
+		console.log(" ");
+		console.log(" ");
+		console.log(" ");
+		console.log(" ");
+		console.log(" ");
+		console.log(" ");
+		console.log(" ");
+		console.log(" ");
+		console.log(response);
+		console.log(" ");
+		console.log(" ");
+		console.log(" ");
+		console.log(" ");
+		console.log(" ");
+		console.log(" ");
+		console.log(" ");
+		console.log(" ");
+		console.log(" ");
+
+
+
+
+
 		var body = '';
 		response.on('data', function(chunk) {
 			body += chunk;
 		});
-		console.log(body);
-		console.log(response.statusCode);
 
 		if(response.statusCode == "200"){
 			response.on('end', function() {
