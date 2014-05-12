@@ -10,11 +10,11 @@ module.exports = {
 	},
 
 	'dessert' : {
-		'authorizationURL'  : 'http://http://dessert-api.herokuapp.com/oauth2',
-		'tokenURL'          : 'http://http://dessert-api.herokuapp.com//oauth2/token',
+		'authorizationURL'  : 'http://dessert-api.herokuapp.com/oauth2',
+		'tokenURL'          : 'http://dessert-api.herokuapp.com//oauth2/token',
 		'clientID' 		    : 'abc123',
 		'clientSecret'   	: 'ssh-secret',
-		'callbackURL' 	    : 'http://http://dessert-web.herokuapp.com/auth/dessert/callback'
+		'callbackURL' 	    : 'http://dessert-web.herokuapp.com/auth/dessert/callback'
 	},
 
 	'facebook' : {
