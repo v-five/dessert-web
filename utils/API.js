@@ -31,6 +31,8 @@ var performRequest = function (endpoint, method, done){
 		options.hostname = 'dessert-api.heroku.com';
 	}
 
+	console.log(options)
+
 	var req = http.request(options, function(response) {
 
 		var body = '';
