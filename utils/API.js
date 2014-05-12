@@ -47,8 +47,10 @@ var performRequest = function (endpoint, method, done){
 			info.code = response.statusCode;
 			info.name = "HttpError";
 
-			var error_match = response.headers['www-authenticate'].match(/error[=]["]+(.*)",/);
-			var error_description_match = response.headers['www-authenticate'].match(/error_description[=]["]+(.*)"/);
+			if(response.headers['www-authenticate']){
+				var error_match = response.headers['www-authenticate'].match(/error[=]["]+(.*)",/);
+				var error_description_match = response.headers['www-authenticate'].match(/error_description[=]["]+(.*)"/);
+			}
 
 			if(error_match)
 				info.error = error_match[1];
