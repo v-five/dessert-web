@@ -40,6 +40,8 @@ var performRequest = function (endpoint, method, done){
 		response.on('data', function(chunk) {
 			body += chunk;
 		});
+		console.log(body);
+		console.log(response.statusCode);
 
 		if(response.statusCode == "200"){
 			response.on('end', function() {
