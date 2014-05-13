@@ -33,37 +33,19 @@ var performRequest = function (endpoint, method, done){
 
 	var req = http.request(options, function(response) {
 
-
-
-		console.log(" ");
-		console.log(" ");
-		console.log(" ");
-		console.log(" ");
-		console.log(" ");
-		console.log(" ");
-		console.log(" ");
-		console.log(" ");
-		console.log(" ");
-		console.log(" ");
-		console.log(response);
-		console.log(" ");
-		console.log(" ");
-		console.log(" ");
-		console.log(" ");
-		console.log(" ");
-		console.log(" ");
-		console.log(" ");
-		console.log(" ");
-		console.log(" ");
-
-
-
-
-
 		var body = '';
 		response.on('data', function(chunk) {
 			body += chunk;
 		});
+		console.log(" ");console.log(" ");console.log(" ");console.log(" ");console.log(" ");console.log(" ");console.log(" ");
+		console.log("Status: "+response.statusCode);
+		console.log("body: "); console.log(body);
+		console.log(" ");
+		console.log(" ");
+		console.log(" ");
+		console.log(" ");
+		console.log(" ");
+		console.log(" ");
 
 		if(response.statusCode == "200"){
 			response.on('end', function() {
