@@ -28,7 +28,7 @@ var performRequest = function (endpoint, method, done){
 		options.hostname = 'localhost';
 		options.port = 3000;
 	}else{
-		options.hostname = 'dessert-api.heroku.com';
+		options.hostname = 'dessert-api.herokuapp.com';
 	}
 
 	var req = http.request(options, function(response) {
@@ -37,15 +37,6 @@ var performRequest = function (endpoint, method, done){
 		response.on('data', function(chunk) {
 			body += chunk;
 		});
-		console.log(" ");console.log(" ");console.log(" ");console.log(" ");console.log(" ");console.log(" ");console.log(" ");
-		console.log("Status: "+response.statusCode);
-		console.log("body: "); console.log(body);
-		console.log(" ");
-		console.log(" ");
-		console.log(" ");
-		console.log(" ");
-		console.log(" ");
-		console.log(" ");
 
 		if(response.statusCode == "200"){
 			response.on('end', function() {
